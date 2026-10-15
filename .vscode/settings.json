@@ -1,0 +1,27 @@
+{
+  "C_Cpp.workspaceParsingPriority": "low",
+  "C_Cpp.exclusionPolicy": "checkFolders",
+  "C_Cpp.intelliSenseCachePath": "/tmp/shuangyuan-cpptools/delphi-sim-pipeline/ipch",
+  "C_Cpp.files.exclude": {
+    "**/build-local/**": true,
+    "**/local-validation/**": true,
+    "**/generators/kk2f/kk2f_build/**": true
+  },
+  "files.watcherExclude": {
+    "**/build-local/CMakeFiles/**": true,
+    "**/build-local/Testing/**": true,
+    "**/local-validation/**": true
+  },
+  "search.exclude": {
+    "**/build-local/**": true,
+    "**/local-validation/**": true
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+}

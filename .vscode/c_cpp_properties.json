@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "compileCommands": "${workspaceFolder}/build-local/compile_commands.json",
+            "includePath": [
+                "${workspaceFolder}",
+                "${env:HOME}/.local/opt/hepmc3/3.3.1/include"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/*",
+                    "${workspaceFolder}/tests/*",
+                    "${env:HOME}/.local/opt/hepmc3/3.3.1/include/HepMC3/*"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "/tmp/shuangyuan-cpptools/delphi-sim-pipeline/browse.vc.db"
+            },
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

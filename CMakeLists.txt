@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(delphi_hepmc_converter LANGUAGES CXX)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Build the external-event converter without key4hep, CVMFS, or CMSSW.
 find_package(HepMC3 3.3 CONFIG REQUIRED HINTS

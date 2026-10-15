@@ -163,8 +163,41 @@ bash build_local.sh
 ```
 
 `HEPMC3_PREFIX` overrides the HepMC3 installation; `LEP_INSTALL_PREFIX`
-overrides the converter install prefix (default `~/.local`). To rebuild
-HepMC3 from the retained official archive:
+overrides the converter install prefix (default `~/.local`).
+
+## VS Code C++ navigation
+
+CMake exports `build-local/compile_commands.json`, including the installed
+HepMC3 include directory and C++17 flags for the converter and
+`tests/make_smoke_events.cpp`. The repository's `.vscode/c_cpp_properties.json`
+uses that database when this repository is opened directly. The parent
+`analysis_color` workspace reads both the NanoAOD and simulation compilation
+databases and includes a HepMC3 header-path fallback.
+
+Symbol indexing is limited to source/header directories. Build outputs,
+validation samples, and the parent workspace's `.lep-tools` tree are excluded
+from background discovery. C++ symbol databases and precompiled-header caches
+use `/tmp/shuangyuan-cpptools/` on the server's local disk instead of the NFS
+workspace. Headers required by the compilation database remain available to
+semantic IntelliSense. The trailing `/*` on browse paths requests a
+non-recursive directory scan.
+
+Generate or refresh the simulation database without installing anything:
+
+```bash
+cmake -S . -B build-local
+cmake --build build-local --target make_smoke_events -j 4
+```
+
+After changing the editor configuration, run `Developer: Reload Window`
+from the VS Code command palette once. If missing-header diagnostics remain
+stale, use `C/C++: Reset IntelliSense Database` once; repeatedly resetting it
+restarts indexing. For the smallest workspace, open `delphi-sim-pipeline`
+directly in a separate VS Code window.
+
+## Rebuild HepMC3
+
+To rebuild HepMC3 from the retained official archive:
 
 ```bash
 tar -xzf ../.lep-tools/downloads/HepMC3-3.3.1.tar.gz -C /tmp

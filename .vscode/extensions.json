@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "mkhl.direnv",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "anthropic.claude-code",
+        "albertopdrf.root-file-viewer"
+    ]
+}
