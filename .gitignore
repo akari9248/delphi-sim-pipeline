@@ -8,6 +8,8 @@ generators/kk2f/kk2f_build/*
 !generators/kk2f/kk2f_build/*.tit
 
 # Output directories
+/build-local/
+/local-validation/
 output*/
 /smoke_outputs/
 condor_logs/
